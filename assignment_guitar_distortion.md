@@ -78,14 +78,17 @@ Konfigurieren Sie eine Spannungsquelle in Ihrem Schaltplan so, dass sie eine `.w
 
 > Die genauen Direktiven `wavefile=` und `.wave` finden Sie im Abschnitt **Hilfreiche Ressourcen** weiter unten.
 
-**Ihre Aufgabe:** Bestimmen Sie die korrekte Stoppzeit für `.tran` selbstständig.
+**Ihre Aufgabe:** Bestimmen Sie die korrekte `.tran`-Stoppzeit selbstständig — es gibt dabei zwei typische Fehler, die Sie vermeiden sollen:
 
-> **Hinweis:** Für diesen ersten Schritt müssen Sie **nicht** die gesamte Audiodatei simulieren. Eine Stoppzeit, die nur wenige vollständige Wellenzyklen erfasst, genügt — gerade genug, um das korrekte Laden des Eingangssignals zu bestätigen und das Clipping im Waveform-Viewer zu beobachten.
+> ⚠️ **Zu kurz:** Wenn die Stoppzeit nur wenige Millisekunden beträgt, sehen Sie im Waveform-Viewer kaum etwas — das Signal ist nicht erkennbar, und es lässt sich nichts beurteilen.
+>
+> ⚠️ **Zu lang (komplette Datei):** Wenn Sie die gesamte Audiodatei simulieren (z. B. mehrere Sekunden), dauert die Simulation unnötig lange und der Waveform-Viewer ist überladen — einzelne Zyklen sind nicht mehr erkennbar.
+>
+> ✅ **Richtig:** Wählen Sie eine Stoppzeit, die **einige wenige vollständige Perioden** des Eingangssignals sichtbar macht. Überlegen Sie: Bei welcher Frequenz liegt das Audiosignal? Wie lang ist eine Periode bei dieser Frequenz?
 
 **Dokumentationskriterien:**
 - Screenshot des Spannungsquellen-Einstellungsdialogs mit dem Attribut `wavefile=`
-- Screenshot der Transientensimulation mit `V(in)` und einigen klar erkennbaren Zyklen
-- Geben Sie die gewählte `.tran`-Stoppzeit an und begründen Sie kurz, warum diese Dauer angemessen ist
+- Screenshot der Transientensimulation mit `V(in)` und 3–10 klar erkennbaren Zyklen
 
 ---
 
@@ -119,7 +122,7 @@ Führen Sie eine Transientensimulation mit Ihrem Audioeingang durch und exportie
 
 ### Aufgabe 4 — Frequenzanalyse (Bode-Diagramm)
 
-Fügen Sie eine `.ac`-Direktive in Ihren Schaltplan ein und führen Sie einen AC-Sweep über **10 Hz – 100 kHz** durch.
+Führen Sie einen AC-Sweep über **10 Hz – 100 kHz** durch.
 
 **Dokumentationskriterien:**
 - Screenshot des Bode-Diagramms (Betrag in dB und Phase in Grad)
@@ -157,10 +160,6 @@ Packen Sie alles in eine einzelne `.zip`-Datei mit dem Namen `nachname_vorname_d
 ### WAV-Import in LTspice
 
 Um eine Audiodatei als Spannungsquelle in LTspice zu verwenden, wird das Attribut `wavefile` an einer Spannungsquelle gesetzt:
-
-```spice
-V1 in 0 wavefile="input.wav"
-```
 
 **Vorgehensweise:**
 1. Platzieren Sie eine Spannungsquelle (`V`) im Schaltplan.
