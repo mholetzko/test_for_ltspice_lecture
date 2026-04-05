@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 390" font-family="Arial,sans-serif">
+  <rect width="660" height="390" fill="white"/>
+
+  <!-- Title -->
+  <text x="330" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#222">Simple Distortion Pedal — Op-Amp + Diode Clipper</text>
+
+  <!-- ═══ GND bus ═══ -->
+  <line x1="58" y1="320" x2="545" y2="320" stroke="#333" stroke-width="1.8"/>
+  <line x1="297" y1="320" x2="297" y2="340" stroke="#333" stroke-width="1.8"/>
+  <line x1="278" y1="340" x2="316" y2="340" stroke="#333" stroke-width="2.2"/>
+  <line x1="284" y1="348" x2="310" y2="348" stroke="#333" stroke-width="2.2"/>
+  <line x1="290" y1="356" x2="304" y2="356" stroke="#333" stroke-width="2.2"/>
+  <text x="297" y="374" text-anchor="middle" font-size="10" fill="#666">GND</text>
+
+  <!-- ═══ V1 wires ═══ -->
+  <line x1="65" y1="174" x2="65" y2="145" stroke="#333" stroke-width="1.8"/>
+  <line x1="65" y1="145" x2="122" y2="145" stroke="#333" stroke-width="1.8"/>
+  <line x1="65" y1="226" x2="65" y2="320" stroke="#333" stroke-width="1.8"/>
+
+  <!-- ═══ V1 input source (circle + sine) ═══ -->
+  <circle cx="65" cy="200" r="26" fill="white" stroke="#333" stroke-width="1.8"/>
+  <path d="M53,200 Q57,188 61,200 Q65,212 69,200 Q73,188 77,200" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="65" y="244" text-anchor="middle" font-size="11">V1</text>
+
+  <!-- ═══ C1 coupling capacitor (horizontal, y=145) ═══ -->
+  <line x1="122" y1="145" x2="147" y2="145" stroke="#333" stroke-width="1.8"/>
+  <line x1="147" y1="133" x2="147" y2="157" stroke="#333" stroke-width="2.5"/>
+  <line x1="153" y1="133" x2="153" y2="157" stroke="#333" stroke-width="2.5"/>
+  <line x1="153" y1="145" x2="200" y2="145" stroke="#333" stroke-width="1.8"/>
+  <text x="150" y="122" text-anchor="middle" font-size="11">C1</text>
+  <text x="150" y="172" text-anchor="middle" font-size="10" fill="#666">100nF</text>
+
+  <!-- N1 junction dot -->
+  <circle cx="200" cy="145" r="3.5" fill="#333"/>
+
+  <!-- ═══ R1 (vertical, N1 to GND) ═══ -->
+  <line x1="200" y1="145" x2="200" y2="165" stroke="#333" stroke-width="1.8"/>
+  <rect x="189" y="165" width="22" height="50" fill="white" stroke="#333" stroke-width="1.8"/>
+  <line x1="200" y1="215" x2="200" y2="320" stroke="#333" stroke-width="1.8"/>
+  <text x="224" y="188" font-size="11">R1</text>
+  <text x="224" y="200" font-size="10" fill="#666">100kΩ</text>
+
+  <!-- ═══ Rin (horizontal, N1 to op-amp minus input) ═══ -->
+  <line x1="200" y1="145" x2="225" y2="145" stroke="#333" stroke-width="1.8"/>
+  <rect x="225" y="134" width="50" height="22" fill="white" stroke="#333" stroke-width="1.8"/>
+  <line x1="275" y1="145" x2="285" y2="145" stroke="#333" stroke-width="1.8"/>
+  <text x="250" y="122" text-anchor="middle" font-size="11">Rin</text>
+  <text x="250" y="172" text-anchor="middle" font-size="10" fill="#666">10kΩ</text>
+
+  <!-- Rf junction dot at (285,145) -->
+  <circle cx="285" cy="145" r="3.5" fill="#333"/>
+  <!-- Wire from junction to op-amp (−) input at (300,145) -->
+  <line x1="285" y1="145" x2="300" y2="145" stroke="#333" stroke-width="1.8"/>
+
+  <!-- ═══ Rf feedback path (top route) ═══ -->
+  <!-- Right vertical: OUT(495,165) → (495,50) -->
+  <line x1="495" y1="165" x2="495" y2="50" stroke="#333" stroke-width="1.8"/>
+  <!-- Top horizontal right segment: (495,50) → (425,50) -->
+  <line x1="495" y1="50" x2="425" y2="50" stroke="#333" stroke-width="1.8"/>
+  <!-- Rf resistor rect: x=370–425, y=39–61 -->
+  <rect x="370" y="39" width="55" height="22" fill="white" stroke="#333" stroke-width="1.8"/>
+  <!-- Top horizontal left segment: (370,50) → (285,50) -->
+  <line x1="370" y1="50" x2="285" y2="50" stroke="#333" stroke-width="1.8"/>
+  <!-- Left vertical: (285,50) → (285,145) -->
+  <line x1="285" y1="50" x2="285" y2="145" stroke="#333" stroke-width="1.8"/>
+  <text x="397" y="29" text-anchor="middle" font-size="11">Rf</text>
+  <text x="397" y="78" text-anchor="middle" font-size="10" fill="#666">100kΩ</text>
+
+  <!-- ═══ VCC supply (drawn before triangle so fill masks lower part) ═══ -->
+  <line x1="340" y1="78" x2="340" y2="122" stroke="#333" stroke-width="1.8"/>
+  <line x1="326" y1="78" x2="354" y2="78" stroke="#333" stroke-width="2.2"/>
+  <text x="359" y="82" font-size="11">+9V</text>
+
+  <!-- ═══ (+) input to GND wire ═══ -->
+  <line x1="300" y1="185" x2="278" y2="185" stroke="#333" stroke-width="1.8"/>
+  <line x1="278" y1="185" x2="278" y2="320" stroke="#333" stroke-width="1.8"/>
+
+  <!-- ═══ op-amp output wire ═══ -->
+  <line x1="420" y1="165" x2="495" y2="165" stroke="#333" stroke-width="1.8"/>
+
+  <!-- ═══ Op-Amp triangle (drawn on top of wires so fill masks internal ends) ═══ -->
+  <polygon points="300,100 300,230 420,165" fill="#eef6ff" stroke="#333" stroke-width="2"/>
+  <text x="313" y="150" font-size="13" font-weight="bold" fill="#222">−</text>
+  <text x="313" y="192" font-size="13" font-weight="bold" fill="#222">+</text>
+  <text x="368" y="162" text-anchor="middle" font-size="9" fill="#555">UniversalOpamp2</text>
+
+  <!-- OUT node junction dot -->
+  <circle cx="495" cy="165" r="3.5" fill="#333"/>
+
+  <!-- ═══ D1 at x=462 — pointing DOWN (anode top, cathode bottom) ═══ -->
+  <line x1="495" y1="165" x2="462" y2="165" stroke="#333" stroke-width="1.8"/>
+  <line x1="462" y1="165" x2="462" y2="193" stroke="#333" stroke-width="1.8"/>
+  <polygon points="450,193 474,193 462,221" fill="#333" stroke="#333" stroke-width="1"/>
+  <line x1="450" y1="221" x2="474" y2="221" stroke="#333" stroke-width="2.4"/>
+  <line x1="462" y1="221" x2="462" y2="320" stroke="#333" stroke-width="1.8"/>
+  <text x="446" y="204" text-anchor="end" font-size="11">D1</text>
+  <text x="446" y="217" text-anchor="end" font-size="10" fill="#666">1N4148</text>
+
+  <!-- ═══ D2 at x=528 — pointing UP (cathode top, anode bottom, anti-parallel) ═══ -->
+  <line x1="495" y1="165" x2="528" y2="165" stroke="#333" stroke-width="1.8"/>
+  <line x1="528" y1="165" x2="528" y2="221" stroke="#333" stroke-width="1.8"/>
+  <line x1="516" y1="221" x2="540" y2="221" stroke="#333" stroke-width="2.4"/>
+  <polygon points="516,251 540,251 528,221" fill="#333" stroke="#333" stroke-width="1"/>
+  <line x1="528" y1="251" x2="528" y2="320" stroke="#333" stroke-width="1.8"/>
+  <text x="544" y="233" font-size="11">D2</text>
+  <text x="544" y="247" font-size="10" fill="#666">1N4148</text>
+
+  <!-- ═══ Output terminal ═══ -->
+  <line x1="495" y1="165" x2="595" y2="165" stroke="#333" stroke-width="1.8"/>
+  <circle cx="595" cy="165" r="6" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="611" y="169" font-size="12" font-weight="bold" fill="#222">OUT</text>
+
+  <!-- IN label -->
+  <text x="65" y="267" text-anchor="middle" font-size="12" font-weight="bold" fill="#222">IN</text>
+
+  <!-- Gain note -->
+  <text x="330" y="385" text-anchor="middle" font-size="10" fill="#888">Gain:  A = −Rf / Rin = −10  |  Clipping threshold ≈ 0.7 V (1N4148 forward voltage)</text>
+</svg>
