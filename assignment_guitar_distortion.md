@@ -78,17 +78,19 @@ Konfigurieren Sie eine Spannungsquelle in Ihrem Schaltplan so, dass sie eine `.w
 
 > Die genauen Direktiven `wavefile=` und `.wave` finden Sie im Abschnitt **Hilfreiche Ressourcen** weiter unten.
 
+> **Einstiegshilfe:** Zum Testen des WAV-Imports genügt zunächst eine sehr einfache Schaltung — eine Spannungsquelle mit `wavefile=` und ein einzelner Lastwiderstand. Die Datei `aufgabe1_wav_test.asc` enthält genau diese Minimalschaltung als Startpunkt. Öffnen Sie sie in LTspice, setzen Sie die `.tran`-Stoppzeit und beobachten Sie `V(out)`.
+
 **Ihre Aufgabe:** Bestimmen Sie die korrekte `.tran`-Stoppzeit selbstständig — es gibt dabei zwei typische Fehler, die Sie vermeiden sollen:
 
 > ⚠️ **Zu kurz:** Wenn die Stoppzeit nur wenige Millisekunden beträgt, sehen Sie im Waveform-Viewer kaum etwas — das Signal ist nicht erkennbar, und es lässt sich nichts beurteilen.
 >
 > ⚠️ **Zu lang (komplette Datei):** Wenn Sie die gesamte Audiodatei simulieren (z. B. mehrere Sekunden), dauert die Simulation unnötig lange und der Waveform-Viewer ist überladen — einzelne Zyklen sind nicht mehr erkennbar.
 >
-> ✅ **Richtig:** Wählen Sie eine Stoppzeit, die **einige wenige vollständige Perioden** des Eingangssignals sichtbar macht. Überlegen Sie: Bei welcher Frequenz liegt das Audiosignal? Wie lang ist eine Periode bei dieser Frequenz?
+> ✅ **Richtig:** Wählen Sie eine Stoppzeit, die **etwa 20 vollständige Perioden** des Eingangssignals sichtbar macht. Da die Frequenz eines Gitarrensignals stark variiert, dient der Kammerton A (440 Hz) nur als theoretische Orientierung — die tatsächliche Stoppzeit können Sie nach der ersten Simulation anhand des Waveform-Viewers nachkorrigieren.
 
 **Dokumentationskriterien:**
 - Screenshot des Spannungsquellen-Einstellungsdialogs mit dem Attribut `wavefile=`
-- Screenshot der Transientensimulation mit `V(in)` und 3–10 klar erkennbaren Zyklen
+- Screenshot der Transientensimulation mit `V(in)` und ca. 20 klar erkennbaren Zyklen
 
 ---
 
@@ -167,6 +169,8 @@ Um eine Audiodatei als Spannungsquelle in LTspice zu verwenden, wird das Attribu
 3. Geben Sie im Feld *PWL* ein: `wavefile="input.wav"`
 4. Legen Sie `input.wav` in denselben Ordner wie Ihre `.asc`-Schaltplandatei.
 
+> ⚠️ **Wichtig:** Verwenden Sie **immer einen relativen Dateinamen** (`wavefile="input.wav"`), niemals einen absoluten Pfad wie `wavefile="/Users/name/..."`. Ein absoluter Pfad funktioniert nur auf Ihrem eigenen Rechner — auf jedem anderen Computer schlägt die Simulation sofort fehl.
+
 LTspice liest die `.wav`-Datei ein und verwendet sie als Eingangssignal im Zeitbereich.
 
 ---
@@ -203,8 +207,8 @@ Um das Simulationsergebnis als abspielbare Audiodatei zu speichern, fügen Sie f
 Die folgenden Ressourcen sind einsteigerfreundlich und direkt relevant für diese Übung:
 
 1. **LTspice WAV-Datei Tutorial (YouTube)**
-   Suche: *"LTspice wav file input output tutorial"*
-   Viele kurze Video-Anleitungen behandeln genau die Direktiven `wavefile=` und `.wave`.
+   [LTspice: WAV-Datei als Quelle verwenden und exportieren](https://www.youtube.com/watch?v=Cym6mcvonfM&t=51)
+   Dieses Video zeigt genau, wie `wavefile=` und `.wave` in LTspice eingerichtet werden — empfohlener Einstieg für Aufgabe 1.
 
 2. **Dioden-Clipping erklärt**
    [Analog Devices — Clipping and Clamping Circuits](https://www.analog.com/en/resources/technical-articles/clipping-and-clamping-circuits.html)
