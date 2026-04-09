@@ -66,10 +66,15 @@
   <text x="397" y="29" text-anchor="middle" font-size="11">Rf</text>
   <text x="397" y="78" text-anchor="middle" font-size="10" fill="#666">100kΩ</text>
 
-  <!-- ═══ VCC supply (drawn before triangle so fill masks lower part) ═══ -->
+  <!-- ═══ VCC supply (+9V, top pin) ═══ -->
   <line x1="340" y1="78" x2="340" y2="122" stroke="#333" stroke-width="1.8"/>
-  <line x1="326" y1="78" x2="354" y2="78" stroke="#333" stroke-width="2.2"/>
-  <text x="359" y="82" font-size="11">+9V</text>
+  <line x1="326" y1="78" x2="354" y2="78" stroke="#c00" stroke-width="2.2"/>
+  <text x="359" y="82" font-size="11" font-weight="bold" fill="#c00">+9V (VCC)</text>
+
+  <!-- ═══ VEE supply (−9V, bottom pin, symmetric supply) ═══ -->
+  <line x1="340" y1="208" x2="340" y2="252" stroke="#333" stroke-width="1.8"/>
+  <line x1="326" y1="252" x2="354" y2="252" stroke="#00c" stroke-width="2.2"/>
+  <text x="359" y="256" font-size="11" font-weight="bold" fill="#00c">−9V (VEE)</text>
 
   <!-- ═══ (+) input to GND wire ═══ -->
   <line x1="300" y1="185" x2="278" y2="185" stroke="#333" stroke-width="1.8"/>
@@ -114,5 +119,5 @@
   <text x="65" y="267" text-anchor="middle" font-size="12" font-weight="bold" fill="#222">IN</text>
 
   <!-- Gain note -->
-  <text x="330" y="385" text-anchor="middle" font-size="10" fill="#888">Gain:  A = −Rf / Rin = −10  |  Clipping threshold ≈ 0.7 V (1N4148 forward voltage)</text>
+  <text x="330" y="385" text-anchor="middle" font-size="10" fill="#888">Gain:  A = −Rf / Rin = −10  |  Clipping threshold ≈ 0.7 V (1N4148)  |  Symmetric supply: ±9V</text>
 </svg>
