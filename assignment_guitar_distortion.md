@@ -80,6 +80,8 @@ Konfigurieren Sie eine Spannungsquelle in Ihrem Schaltplan so, dass sie eine `.w
 
 > **Einstiegshilfe:** Zum Testen des WAV-Imports genügt zunächst eine sehr einfache Schaltung — eine Spannungsquelle mit `wavefile=` und ein einzelner Lastwiderstand. Die Datei `aufgabe1_wav_test.asc` enthält genau diese Minimalschaltung als Startpunkt. Öffnen Sie sie in LTspice, setzen Sie die `.tran`-Stoppzeit und beobachten Sie `V(out)`.
 
+![Minimalschaltung Aufgabe 1](aufgabe1_minimal_circuit.svg)
+
 **Ihre Aufgabe:** Bestimmen Sie die korrekte `.tran`-Stoppzeit selbstständig — es gibt dabei zwei typische Fehler, die Sie vermeiden sollen:
 
 > ⚠️ **Zu kurz:** Wenn die Stoppzeit nur wenige Millisekunden beträgt, sehen Sie im Waveform-Viewer kaum etwas — das Signal ist nicht erkennbar, und es lässt sich nichts beurteilen.
