@@ -103,11 +103,11 @@ Bauen Sie Ihre Distortion-Schaltung in LTspice auf. Die Schaltung muss enthalten
 - eine **Verstärkerstufe** (z. B. invertierender OPV mit `UniversalOpamp2`),
 - eine **Clipping-Stufe** (zwei Dioden, z. B. 1N4148, antiparallel am Ausgang).
 
-Simulieren Sie die Schaltung mit **zwei verschiedenen Verstärkungseinstellungen** und vergleichen Sie, wie sich das Ausmaß des Clippings verändert. Wählen Sie eine niedrige und eine hohe Verstärkung.
+Simulieren Sie die Schaltung mit einer Verstärkungseinstellung Ihrer Wahl. Stellen Sie `V(in)` und `V(out)` im selben Waveform-Viewer-Diagramm dar, sodass der Clipping-Effekt im Vergleich zum Eingangssignal klar erkennbar ist.
 
 **Dokumentationskriterien:**
 - Screenshot des vollständigen LTspice-Schaltplans
-- Screenshot des Waveform-Viewers mit `V(out)` für **beide Verstärkungseinstellungen im selben Diagramm**, eindeutig beschriftet, sodass der Unterschied im Clipping erkennbar ist
+- Screenshot des Waveform-Viewers mit **`V(in)` und `V(out)` im selben Diagramm**, sodass das Clipping bei `V(out)` gegenüber dem unverzerrten Eingangssignal sichtbar ist
 
 ---
 
