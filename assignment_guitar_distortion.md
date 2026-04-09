@@ -1,6 +1,6 @@
 # Laborübung: Simulation eines Gitarren-Distortion-Pedals
 
-**Lehrveranstaltung:** Schaltungssimulation mit LTspice IV
+**Lehrveranstaltung:** Schaltungssimulation mit LTspice (latest version)
 **Abgabeformat:** `.zip`-Archiv (siehe Abgabeliste)
 
 ---
